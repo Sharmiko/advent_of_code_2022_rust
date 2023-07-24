@@ -1,5 +1,6 @@
 mod calorie_counting;
+mod bench;
 
 fn main() {
-    calorie_counting::main();
+    bench::main();
 }
