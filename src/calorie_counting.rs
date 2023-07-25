@@ -3,9 +3,35 @@ use std::io::BufReader;
 use std::io::prelude::*;
 
 
-pub fn main() {
+fn get_data() -> BufReader<File> {
     let file = File::open("./data/calorie_counting_input.txt").expect("Could not read the file.");
-    let buf_reader = BufReader::new(file);
+     BufReader::new(file)
+}
+
+
+pub fn main_part01() {
+    let buf_reader = get_data();
+
+    let mut current: i32 = 0;
+    let mut max_calories: i32 = 0;
+    for line in buf_reader.lines() {
+        let calorie = line.unwrap();
+        if calorie.len() == 0 {
+            if current > max_calories {
+                max_calories = current;
+            }
+            current = 0;
+        } else {
+            current += calorie.parse::<i32>().unwrap();
+        }
+    }
+
+    println!("Max calories {}", max_calories);
+}
+
+
+pub fn main_part02() {
+    let buf_reader = get_data();
 
     let mut top_three_calories = vec![0; 3];
     let mut current: i32 = 0;
@@ -26,6 +52,5 @@ pub fn main() {
         }
     }
 
-    println!("Max calories {:?}", top_three_calories);
     println!("Sum of top 3 calories: {}", top_three_calories.iter().sum::<i32>());
 }
