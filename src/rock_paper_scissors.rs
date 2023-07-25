@@ -21,28 +21,23 @@ pub fn main() {
         //     score += 3;
         // }
 
-        println!("{} {}", opponent, player);
         match player {
             2 => {
                 player = (opponent + 1) % 3;
                 part2_score += 6;
-                println!("A -- {}", player);
             }
             1 => {
                 player = opponent;
                 part2_score += 3;
-                println!("B -- {}", player);
             }
             _ => {
                 player = (opponent + 2) % 3;
-                println!("C -- {}", player);
             }
         }
 
 
         //score += (player + 1) as i32;
         part2_score += (player + 1) as i32;
-        println!("SCOE {}", part2_score);
     }
 
     println!("Final player score: {}", score);
