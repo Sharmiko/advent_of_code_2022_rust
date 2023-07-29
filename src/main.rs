@@ -1,7 +1,8 @@
 mod calorie_counting;
 mod bench;
 mod rock_paper_scissors;
+mod rucksack_reorganization;
 
 fn main() {
-    calorie_counting::main_part02();
+    rucksack_reorganization::main_part01();
 }
