@@ -16,22 +16,14 @@ pub fn main_part01() {
     let mut priorities_sum: u32 = 0;
     for line in buf_reader.lines() {
         let line = line.unwrap();
-        let one_part_size = line.len() / 2;
         let bytes = line.as_bytes();
-        let mut common_items = HashSet::new();
+        let mid_point = line.len() / 2;
+        let common_items: HashSet<u8> = bytes.iter().take(mid_point).cloned().collect();
 
-        for idx in 0..line.len() {
-            if idx < one_part_size {
-                common_items.insert(bytes[idx]);
-            } else {
-                if common_items.contains(&bytes[idx]) {
-                    if bytes[idx] > 96 {
-                        priorities_sum += (bytes[idx] - 96) as u32;
-                    } else {
-                        priorities_sum += (bytes[idx] - 38) as u32;
-                    }
-                    break;
-                }
+        for (idx, &byte) in bytes.iter().skip(mid_point).enumerate() {
+            if common_items.contains(&byte) {
+                priorities_sum += if byte > 96 { byte - 96 } else { byte - 38} as u32;
+                break;
             }
         }
 
