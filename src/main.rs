@@ -4,5 +4,5 @@ mod rock_paper_scissors;
 mod rucksack_reorganization;
 
 fn main() {
-    rucksack_reorganization::main_part01();
+    rucksack_reorganization::main_part02();
 }
