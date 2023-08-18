@@ -3,7 +3,8 @@ mod bench;
 mod rock_paper_scissors;
 mod rucksack_reorganization;
 mod camp_cleanup;
+mod supply_stacks;
 
 fn main() {
-    camp_cleanup::main_part02();
+    supply_stacks::main_part02();
 }
