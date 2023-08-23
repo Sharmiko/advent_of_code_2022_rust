@@ -4,7 +4,8 @@ mod rock_paper_scissors;
 mod rucksack_reorganization;
 mod camp_cleanup;
 mod supply_stacks;
+mod tuning_trouble;
 
 fn main() {
-    supply_stacks::main_part02();
+    tuning_trouble::main_part02();
 }
