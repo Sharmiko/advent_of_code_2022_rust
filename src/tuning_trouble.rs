@@ -10,7 +10,7 @@ fn get_data() -> BufReader<File> {
 }
 
 
-pub fn find_market(marker_length: usize) {
+pub fn find_marker(marker_length: usize) {
     let mut buf_reader = get_data();
     let mut data = String::new();
     buf_reader.read_to_string(&mut data).expect("Could not read to string.");
@@ -34,9 +34,9 @@ pub fn find_market(marker_length: usize) {
 
 
 pub fn main_part01() {
-    find_market(4);
+    find_marker(4);
 }
 
 pub fn main_part02() {
-    find_market(14);
+    find_marker(14);
 }
