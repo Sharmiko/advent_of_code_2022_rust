@@ -9,5 +9,5 @@ mod no_space_left_on_device_input;
 mod treetop_tree_house;
 
 fn main() {
-    treetop_tree_house::main_part01();
+    treetop_tree_house::main_part02();
 }
