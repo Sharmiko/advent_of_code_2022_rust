@@ -10,5 +10,5 @@ mod treetop_tree_house;
 mod rope_bridge;
 
 fn main() {
-    rope_bridge::main_part01();
+    rope_bridge::main_part02();
 }
