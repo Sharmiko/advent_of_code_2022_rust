@@ -8,7 +8,8 @@ mod tuning_trouble;
 mod no_space_left_on_device_input;
 mod treetop_tree_house;
 mod rope_bridge;
+mod cathode_ray_tube;
 
 fn main() {
-    rope_bridge::main_part02();
+    cathode_ray_tube::main_part01();
 }
