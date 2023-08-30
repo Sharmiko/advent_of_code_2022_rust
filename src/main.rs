@@ -11,5 +11,5 @@ mod rope_bridge;
 mod cathode_ray_tube;
 
 fn main() {
-    cathode_ray_tube::main_part01();
+    cathode_ray_tube::main_part02();
 }

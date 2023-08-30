@@ -42,5 +42,45 @@ pub fn main_part01() {
 
 
 pub fn main_part02() {
-    todo!()
+    let buf_reader = get_data();
+
+    let mut cycle_count:usize = 0;
+    let mut sprite_position: i32 = 1;
+
+    let mut idx = 0;
+    let mut crt_rows: Vec<Vec<char>> = vec![vec!['.'; 40]; 6];
+
+    for row in buf_reader.lines() {
+        let row = row.unwrap();
+
+        cycle_count += 1;
+
+        if sprite_position <= cycle_count as i32 && sprite_position + 2 >= cycle_count as i32 {
+            crt_rows[idx][cycle_count -1] = '#';
+        }
+
+        if cycle_count == 40 {
+            idx += 1;
+            cycle_count = 0;
+        }
+
+        if row.starts_with("addx") {
+            let value = row.strip_prefix("addx ").unwrap().parse::<i32>().unwrap();
+            cycle_count += 1;
+
+            if sprite_position <= cycle_count as i32 && sprite_position + 2 >= cycle_count as i32 {
+                crt_rows[idx][cycle_count - 1] = '#';
+            }
+            if cycle_count == 40 {
+                idx += 1;
+                cycle_count = 0;
+            }
+
+            sprite_position += value;
+        }
+    }
+
+    for row in crt_rows {
+        println!("{:?}", row);
+    }
 }
