@@ -11,7 +11,7 @@ fn get_data() -> BufReader<File> {
 
 
 fn calculate_dir_sizes() -> HashMap<String, usize> {
-    let mut buf_reader = get_data();
+    let buf_reader = get_data();
     let mut lines = buf_reader.lines();
 
 

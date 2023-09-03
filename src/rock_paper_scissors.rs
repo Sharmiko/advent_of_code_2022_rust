@@ -17,7 +17,7 @@ pub fn main_part01() {
         let line = line.unwrap();
         let byte = line.as_bytes();
         let opponent = byte[0] - 65;
-        let mut player = byte[2] - 88;
+        let player = byte[2] - 88;
 
         if (opponent + 1) % 3 == player {
             score += 6;

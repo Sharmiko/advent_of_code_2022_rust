@@ -22,7 +22,7 @@ fn parse_stacks(stack_data: &str) -> Vec<Vec<String>> {
         let mut counter = 0;
         while line.peek().is_some() {
             let mut chunk: String = line.by_ref().take(4).collect();
-            let chunk = chunk.replace(" ", "");
+            chunk = chunk.replace(" ", "");
             if chunk.starts_with("1") {
                 break;
             }
