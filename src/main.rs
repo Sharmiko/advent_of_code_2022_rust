@@ -9,7 +9,8 @@ mod no_space_left_on_device_input;
 mod treetop_tree_house;
 mod rope_bridge;
 mod cathode_ray_tube;
+mod monkey_in_the_middle;
 
 fn main() {
-    cathode_ray_tube::main_part02();
+    monkey_in_the_middle::main_part02();
 }
