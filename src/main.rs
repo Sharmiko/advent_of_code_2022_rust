@@ -10,7 +10,8 @@ mod treetop_tree_house;
 mod rope_bridge;
 mod cathode_ray_tube;
 mod monkey_in_the_middle;
+mod hill_climbing_algorithm;
 
 fn main() {
-    monkey_in_the_middle::main_part02();
+    hill_climbing_algorithm::main_part02();
 }
